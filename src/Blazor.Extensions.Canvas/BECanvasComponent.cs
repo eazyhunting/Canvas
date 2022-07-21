@@ -21,30 +21,58 @@ namespace Blazor.Extensions
         public bool ContextMenuStopPropagation { get; set; } = false;
 
         [Parameter]
+        public EventCallback<MouseEventArgs> ContextMenu { get; set; }
+
+        [Parameter]
         public EventCallback<MouseEventArgs> Click { get; set; }
 
         [Parameter]
-        public EventCallback<MouseEventArgs> ContextMenu { get; set; }
+        public EventCallback<MouseEventArgs> DoubleClick { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> MouseDown { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> MouseUp { get; set; }
 
         [Parameter]
         public EventCallback<WheelEventArgs> MouseWheel { get; set; }
 
-        protected readonly string Id = Guid.NewGuid().ToString();
+        [Parameter]
+        public EventCallback<MouseEventArgs> MouseMove { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> MouseOver { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> MouseOut { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> Focus { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> Blur { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> KeyDown { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> KeyUp { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> KeyPress { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> Load { get; set; }
+
+        [Parameter]
+        public string Id { get; set; } = Guid.NewGuid().ToString();
+
         protected ElementReference _canvasRef;
 
         public ElementReference CanvasReference => this._canvasRef;
 
         [Inject]
         internal IJSRuntime JSRuntime { get; set; }
-
-        protected async Task OnClicked(MouseEventArgs args)
-        {
-          await this.Click.InvokeAsync(args);
-        }
-
-        protected async Task OnContextMenu(MouseEventArgs args)
-        {
-            await this.ContextMenu.InvokeAsync(args);
-        }
     }
 }
