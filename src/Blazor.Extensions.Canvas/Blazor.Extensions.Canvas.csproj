@@ -4,7 +4,8 @@
     <Title>Blazor Extensions Canvas</Title>
     <Description>HTML5 Canvas API implementation for ASP.NET Core Blazor.</Description>
     <PackageId>Blazor.Extensions.Canvas</PackageId>
-    <PackageVersion>1.2.6</PackageVersion>
+    <PackageVersion>1.2.7</PackageVersion>
+    <PackageReleaseNotes>Native events passthrough</PackageReleaseNotes>
     <IsPackable>true</IsPackable>
     <Authors>CrystalSystems Development Team</Authors>
   </PropertyGroup>
