@@ -48,22 +48,22 @@ namespace Blazor.Extensions
         public EventCallback<MouseEventArgs> MouseOut { get; set; }
 
         [Parameter]
-        public EventCallback<MouseEventArgs> Focus { get; set; }
+        public EventCallback<FocusEventArgs> Focus { get; set; }
 
         [Parameter]
-        public EventCallback<MouseEventArgs> Blur { get; set; }
+        public EventCallback<FocusEventArgs> Blur { get; set; }
 
         [Parameter]
-        public EventCallback<MouseEventArgs> KeyDown { get; set; }
+        public EventCallback<KeyboardEventArgs> KeyDown { get; set; }
 
         [Parameter]
-        public EventCallback<MouseEventArgs> KeyUp { get; set; }
+        public EventCallback<KeyboardEventArgs> KeyUp { get; set; }
 
         [Parameter]
-        public EventCallback<MouseEventArgs> KeyPress { get; set; }
+        public EventCallback<KeyboardEventArgs> KeyPress { get; set; }
 
         [Parameter]
-        public EventCallback<MouseEventArgs> Load { get; set; }
+        public EventCallback<ProgressEventArgs> Load { get; set; }
 
         [Parameter]
         public string Id { get; set; } = Guid.NewGuid().ToString();
